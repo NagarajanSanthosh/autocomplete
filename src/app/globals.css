@@ -64,3 +64,14 @@ body {
   background-color: #0a2a66;
   cursor: pointer;
 }
+@media only screen and (max-width: 425px){
+  .input-field, .results-container {
+    width: 200px;
+  }
+  .results-container {
+    max-height: 200px;
+  }
+  .result {
+    padding: 2px;
+  }
+}
