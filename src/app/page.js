@@ -23,6 +23,9 @@ export default function Home() {
   }
   useEffect(() => {
     const timer = setTimeout(fetchData, 300)
+    return () => {
+      clearTimeout(timer)
+    }
   }, [input]);
 
   useEffect(() => {
@@ -46,7 +49,7 @@ export default function Home() {
         onKeyDown={handleKeyDown}
       />
 
-      {show && (
+      {show && results.length > 0 && (
         <div className="results-container">
           {results.map((r, idx) => (
             <span
